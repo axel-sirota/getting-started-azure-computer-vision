@@ -3,11 +3,7 @@ from azure.cognitiveservices.vision.computervision.models import OperationStatus
 from azure.cognitiveservices.vision.computervision.models import VisualFeatureTypes
 from msrest.authentication import CognitiveServicesCredentials
 
-from array import array
 import os
-from PIL import Image
-import sys
-import time
 
 # Authenticate
 
@@ -16,14 +12,10 @@ endpoint = os.environ["AZURE_COMPUTER_VISION_ENDPOINT"]
 
 computervision_client = ComputerVisionClient(endpoint, CognitiveServicesCredentials(subscription_key))
 
-image_url = "https://i.blogs.es/09b293/satya-nadella-microsoft-linux-2-930x550/1366_2000.jpg"
+django_image = "https://image.shutterstock.com/image-photo/samuel-l-jackson-kerry-washington-600w-124847914.jpg"
 
-described_response = computervision_client.describe_image(image_url, max_candidates=1)
+# Input code here
 
-print(f"The description of the image is: {described_response.captions[0].text} with confidence {described_response.captions[0].confidence}")
+sydney_opera_house = "https://image.shutterstock.com/image-photo/sydney-august-22-sails-opera-600w-217455298.jpg"
 
-tags = computervision_client.tag_image(url=image_url)
-
-print(f"The tags are {[ tag.name for tag in tags.tags]} ")
-
-print("The image was:")
+# Input code here
