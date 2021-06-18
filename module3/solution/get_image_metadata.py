@@ -1,9 +1,7 @@
-from azure.cognitiveservices.vision.computervision import ComputerVisionClient
-from azure.cognitiveservices.vision.computervision.models import OperationStatusCodes
-from azure.cognitiveservices.vision.computervision.models import VisualFeatureTypes
-from msrest.authentication import CognitiveServicesCredentials
-
 import os
+
+from azure.cognitiveservices.vision.computervision import ComputerVisionClient
+from msrest.authentication import CognitiveServicesCredentials
 
 # Authenticate
 
@@ -12,7 +10,7 @@ endpoint = os.environ["AZURE_COMPUTER_VISION_ENDPOINT"]
 
 computervision_client = ComputerVisionClient(endpoint, CognitiveServicesCredentials(subscription_key))
 
-image_url = "https://i.blogs.es/09b293/satya-nadella-microsoft-linux-2-930x550/1366_2000.jpg"
+image_url = "https://upload.wikimedia.org/wikipedia/commons/1/15/Microsoft_Linux.jpg"
 
 described_response = computervision_client.describe_image(image_url, max_candidates=1)
 

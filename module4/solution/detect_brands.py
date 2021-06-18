@@ -1,9 +1,7 @@
-from azure.cognitiveservices.vision.computervision import ComputerVisionClient
-from azure.cognitiveservices.vision.computervision.models import OperationStatusCodes
-from azure.cognitiveservices.vision.computervision.models import VisualFeatureTypes
-from msrest.authentication import CognitiveServicesCredentials
-
 import os
+
+from azure.cognitiveservices.vision.computervision import ComputerVisionClient
+from msrest.authentication import CognitiveServicesCredentials
 
 # Authenticate
 
@@ -12,8 +10,8 @@ endpoint = os.environ["AZURE_COMPUTER_VISION_ENDPOINT"]
 
 computervision_client = ComputerVisionClient(endpoint, CognitiveServicesCredentials(subscription_key))
 
-microsoft_shirt = "https://image.shutterstock.com/image-photo/redmond-washington-usa-march-28-600w-1357496909.jpg"
+logo = "https://raw.githubusercontent.com/axel-sirota/getting-started-azure-computer-vision/main/Images/my_car.jpg"
 
-brand_response = computervision_client.analyze_image(microsoft_shirt, visual_features=['Brands'], max_candidates=1)
+brand_response = computervision_client.analyze_image(logo, visual_features=['Brands'], max_candidates=1)
 
 print(f"Brands are { [brand.name for brand in brand_response.brands] }")

@@ -12,4 +12,4 @@ endpoint = os.environ["AZURE_COMPUTER_VISION_ENDPOINT"]
 
 computervision_client = ComputerVisionClient(endpoint, CognitiveServicesCredentials(subscription_key))
 
-microsoft_shirt = "https://image.shutterstock.com/image-photo/redmond-washington-usa-march-28-600w-1357496909.jpg"
+logo = "https://image.shutterstock.com/image-photo/calodyne-mauritius-april-30-2016-600w-761081275.jpg"

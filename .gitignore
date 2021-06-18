@@ -130,3 +130,5 @@ dmypy.json
 dev.env
 
 .idea
+*/**/.DS_Store
+.DS_Store
